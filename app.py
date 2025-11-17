@@ -96,3 +96,42 @@ chart = (
 )
 
 st.altair_chart(chart, use_container_width=True)
+
+# ======================
+# 페이지 전체 설정
+# ======================
+st.set_page_config(
+    page_title="신채원의 Streamlit",   # 브라우저 탭 이름
+    page_icon="👩‍💻",                   # 탭 아이콘
+    layout="wide",                      # 레이아웃
+    initial_sidebar_state="expanded",   # 사이드바 펼쳐짐
+    menu_items={
+        'Get help': 'https://docs.streamlit.io',
+        'Report a bug': 'https://streamlit.io',
+        'About': "### 신채원 교수 \n [홍익대학교 산업·데이터공학과](https://blog.naver.com/tlscodnjs03)"
+    }
+)
+
+# ======================
+# 사이드바
+# ======================
+st.sidebar.title("다양한 사이드바 위젯들")
+
+st.sidebar.checkbox('외국인 포함')
+st.sidebar.checkbox('고령인구 포함')
+
+st.sidebar.divider()  # 구분선
+
+data_type = st.sidebar.radio('데이터 타입', ['전체', '남성', '여성'])
+age = st.sidebar.slider('나이', 0, 100, (20, 50))
+region = st.sidebar.selectbox('지역', ['서울', '경기', '인천', '대전', '대구', '부산', '광주'])
+
+# ======================
+# 본문 출력
+# ======================
+st.title("신채원의 Streamlit 데모 페이지")
+
+st.write("현재 선택된 값들:")
+st.write(f"데이터 타입: {data_type}")
+st.write(f"나이 범위: {age}")
+st.write(f"지역: {region}")
