@@ -1,7 +1,10 @@
 streamlit
 pandas
+numpy
 altair
 plotly
 pydeck
 folium
 streamlit-folium
+matplotlib
+Pillow
