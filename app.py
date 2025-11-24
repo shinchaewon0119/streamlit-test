@@ -328,33 +328,25 @@ st.write(f'입력한 시간: {time}')
 # :orange[파일 업로드]
 file = st.file_uploader('파일을 업로드해주세요')
 
-# ------------------------------
-# 파일을 임시적으 로 사용하는 방법
-# ------------------------------
 if file:
     st.write('업로드된 파일명:', file.name)
 
-    # 파일 저장 경로 설정
+    # 배포 환경에서도 사용 가능한 상대경로 저장
     import os
-    file_path = os.path.join("C:/Users/shinchaewon/Desktop/데이터시각화", file.name)
+    os.makedirs("uploads", exist_ok=True)  # 폴더 없으면 생성
+    file_path = os.path.join("uploads", file.name)
 
     # 저장
     with open(file_path, 'wb') as f:
         f.write(file.getbuffer())
+
     st.success(f'파일이 저장되었습니다: {file_path}')
-# :blue[버튼]
 
-# :orange[기본 버튼: st.button()]
-button = st.button('일반 버튼')
-if button:
-    st.write('버튼이 클릭되었습니다!')
 
-primary_button = st.button("주요 버튼", type='primary')
-if primary_button:
-    st.write('주요 버튼이 클릭되었습니다!')
-
-# :orange[다운로드 버튼: st.download_button()]
-with open(r"C:\Users\shinchaewon\Desktop\데이터시각화\KakaoTalk_20251124_140432552.jpg", "rb") as file:
+# ------------------------------
+# 다운로드 버튼
+# ------------------------------
+with open("KakaoTalk_20251124_140432552.jpg", "rb") as file:
     st.download_button(
         label="이미지 다운로드",
         data=file,
@@ -475,5 +467,6 @@ st.divider()  # 구분선
 st.scatter_chart(st.session_state.df, x="x", y="y", color=color2)
 
 st.write('💕 :green[session_state를 사용하면, 저장된 state를 사용하므로 값이 고정됨]')
+
 
 
