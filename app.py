@@ -91,13 +91,13 @@ st.title("🐶 미디어 삽입 연습")
 
 # 이미지 삽입
 st.header("이미지 넣기 : st.image()")
-st.image("media/KakaoTalk_20251124_140432552.jpg", width=200)
+st.image("KakaoTalk_20251124_140432552.jpg", width=200)
 # 오디오 예시 (옵션)
 # st.audio("경로", format="audio/mpeg", loop=True)
 
 # 동영상 삽입
 st.header("동영상 넣기 : st.video()")
-st.video("media/5534286-hd_1080_1920_30fps.mp4", format="video/mp4", loop=True)
+st.video("5534286-hd_1080_1920_30fps.mp4", format="video/mp4", loop=True)
 
 st.divider()
 st.title("📚 콜아웃(Callout) 예시")
@@ -475,4 +475,5 @@ st.divider()  # 구분선
 st.scatter_chart(st.session_state.df, x="x", y="y", color=color2)
 
 st.write('💕 :green[session_state를 사용하면, 저장된 state를 사용하므로 값이 고정됨]')
+
 
