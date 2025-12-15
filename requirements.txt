@@ -1,0 +1,29 @@
+# 기본
+streamlit
+pandas
+numpy
+warnings
+
+# 시각화
+matplotlib
+altair
+plotly
+pydeck
+folium
+streamlit-folium
+Pillow
+seaborn
+koreanize-matplotlib
+wordcloud
+
+# 네트워크 분석
+networkx
+
+# 텍스트 처리
+konlpy
+
+# HTTP 요청 / API
+urllib3
+
+# (선택적) HTML 저장용 / 웹 시각화
+mpld3
